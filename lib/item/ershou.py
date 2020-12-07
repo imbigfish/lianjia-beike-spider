@@ -6,13 +6,18 @@
 
 
 class ErShou(object):
-    def __init__(self, district, area, name, price, desc, pic):
-        self.district = district
-        self.area = area
-        self.price = price
-        self.name = name
-        self.desc = desc
-        self.pic = pic
+    def __init__(self, district, area, name, price, desc, pic, href):
+        self.district = district.replace(',', '-')
+        self.area = area.replace(',', '-')
+        self.price = price.replace(',', '-')
+        self.name = name.replace(',', '-')
+        self.desc = desc.replace(',', '-')
+        self.pic = pic.replace(',', '-')
+        self.href = href.replace(',', '-')
+
+    @staticmethod
+    def header():
+        return 'district,area,name,price,desc,href'
 
     def text(self):
         return self.district + "," + \
@@ -20,4 +25,4 @@ class ErShou(object):
                 self.name + "," + \
                 self.price + "," + \
                 self.desc + "," + \
-                self.pic
+                self.href

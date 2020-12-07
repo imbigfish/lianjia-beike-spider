@@ -62,7 +62,7 @@ if __name__ == '__main__':
     elif database == "json":
         import json
     elif database == "csv":
-        csv_file = open("xiaoqu.csv", "w")
+        csv_file = open("xiaoqu.csv", "w", encoding="utf-8")
         line = "{0};{1};{2};{3};{4};{5};{6}\n".format('city_ch', 'date', 'district', 'area', 'xiaoqu', 'price', 'sale')
         csv_file.write(line)
 
